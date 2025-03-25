@@ -1,10 +1,18 @@
-const io = require('socket.io')(3000);
+const express = require('express');
+const app = express();
 
-io.on('connection', (socket) => {
-    console.log('Гравець підключився');
+// Визначаємо порт для прослуховування
+const port = 3000;
 
-    socket.on('attack', (data) => {
-        console.log('Гравець атакує:', data);
-        socket.broadcast.emit('attacked', { damage: data.damage });
-    });
+// Встановлюємо корінь для статичних файлів, якщо вони є
+app.use(express.static('public'));
+
+// Створюємо простий маршрут для тесту
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
+
+// Запускаємо сервер на порту 3000
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
