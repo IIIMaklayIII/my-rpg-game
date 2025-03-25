@@ -1,11 +1,18 @@
 {
-  "name": "my-rpg-game",
+  "name": "rpg-game",
   "version": "1.0.0",
-  "description": "Моя RPG гра з бекендом",
-  "main": "server.js",
+  "main": "game.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
   }
 }
+
